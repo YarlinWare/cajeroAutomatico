@@ -31,12 +31,45 @@
 </template>
 
 <script>
+import {GGanttChart, GGanttRow} from 'vue-ganttastic'
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  components:{
+    'g-gantt-chart':GGanttChart,
+    'g-gantt-row':GGanttRow
+  },
+  data(){
+    return {
+      myChartStart: "2020-03-01 00:00",
+      myChartEnd: "2020-03-03 00:00",
+      rows: [
+        {
+          label: "My row #1",
+          bars: [
+            {
+              myStart: "2020-03-01 12:10",
+              myEnd: "2020-03-01 16:35"
+            }
+          ]
+        },
+        {
+          label: "My row #2",
+          bars: [
+            {
+              myStart: "2020-03-02 01:00",
+              myEnd: "2020-03-02 12:00"
+            },
+            {
+              myStart: "2020-03-02 13:00",
+              myEnd: "2020-03-02 22:00"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
